@@ -10,7 +10,6 @@ interface Articles {
 
 const ViewedArticle = ({viewedstories}:any) => {
     if (viewedstories) {
-
         return (
             <div>
                 {viewedstories.map((article: Articles, i:number) => (
