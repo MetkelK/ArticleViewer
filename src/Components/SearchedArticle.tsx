@@ -23,7 +23,7 @@ const SearchedArticle = ({searchedstories, setSearch}:any) => {
                     <h1 aria-label="title">{article.headline.main}</h1>
                     <h2 aria-label="byline">{article.byline.original}</h2>
                     <p aria-label="abstract">{article.abstract}</p>
-                    <p aria-label="pub_">{article.pub_date}</p>
+                    <p aria-label="date">{article.pub_date}</p>
                     <a href={article.web_url} aria-label="url">New York Times</a>
                 </div>
             ))}
