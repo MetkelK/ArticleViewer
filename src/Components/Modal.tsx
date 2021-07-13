@@ -11,8 +11,10 @@ const Modal = ({ children, setSearch, search }: any) => {
   useEffect(() => {
     if (search) {
       setOpen(true);
+      document.body.style.overflow = "hidden";
     } else {
       setOpen(false);
+      document.body.style.overflow = "scroll";
     }
   }, [search]);
 
@@ -20,7 +22,9 @@ const Modal = ({ children, setSearch, search }: any) => {
     return (
       <div className="modal">
         <div className="modal-content">
-          <button onClick={handleClose}>&times;</button>
+          <button className="close" onClick={handleClose}>
+            &times;
+          </button>
           {children}
         </div>
       </div>
