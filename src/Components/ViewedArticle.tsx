@@ -33,9 +33,9 @@ const ViewedArticle = ({ viewedstories }: any) => {
                 />
                 <div className="info-container">
                   <h1 aria-label="title">{article.title}</h1>
-                  <h2 aria-label="byline">{article.byline}</h2>
+                  {/* <h2 aria-label="byline">{article.byline}</h2> */}
                   <p aria-label="abstract">{article.abstract}</p>
-                  <p aria-label="date">{article.published_date}</p>
+                  {/* <p aria-label="date">{article.published_date}</p> */}
                   <a href={article.url} aria-label="url">
                     Read More
                   </a>
