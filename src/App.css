@@ -83,34 +83,50 @@
 }
 
 .article-container {
-  padding: 1rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
 
 .article {
   position: relative;
-  margin: 1rem;
+  margin: 0.5rem 0;
 }
 
 .article img {
   width: 100%;
+  display: block;
 }
 
 .info-container {
-  max-width: 100%;
+  width: calc(100% - 0.5rem);
   height: auto;
   position: absolute;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 2rem 1rem;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-container h1,
 .info-container h2,
 .info-container p,
 .info-container a {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.25rem 0;
+}
+
+.info-container h1,
+.info-container h2 {
+  font-size: 0.85vmax;
+}
+
+.info-container p,
+.info-container a {
+  font-size: 0.75vmax;
 }
 
 .info-container a {
