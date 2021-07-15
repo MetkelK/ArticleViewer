@@ -15,6 +15,7 @@ interface Articles {
         };
       };
       caption: string;
+      copyright: string;
     };
   };
 }
@@ -27,19 +28,27 @@ const ViewedArticle = ({ viewedstories }: any) => {
           if (article.media.length > 0)
             return (
               <div key={i} className="article">
-                <img
-                  src={article.media[0]["media-metadata"][2].url}
-                  alt={article.media[0].caption}
-                />
-                <div className="info-container">
-                  <h1 aria-label="title">{article.title}</h1>
+                <a href={article.url} aria-label="url">
+                  <figure>
+                    <img
+                      src={article.media[0]["media-metadata"][2].url}
+                      alt={article.media[0].caption}
+                    />
+                    <figcaption className="copyright">
+                      {article.media[0].copyright}
+                    </figcaption>
+                  </figure>
+                </a>
+                <a
+                  href={article.url}
+                  aria-label="url"
+                  className="info-container"
+                >
+                  <h3 aria-label="title">{article.title}</h3>
                   {/* <h2 aria-label="byline">{article.byline}</h2> */}
                   <p aria-label="abstract">{article.abstract}</p>
                   {/* <p aria-label="date">{article.published_date}</p> */}
-                  <a href={article.url} aria-label="url">
-                    Read More
-                  </a>
-                </div>
+                </a>
               </div>
             );
           return null;
