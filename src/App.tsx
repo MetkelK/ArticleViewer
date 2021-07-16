@@ -12,6 +12,7 @@ const App = () => {
   const [searchedStory, setSearchedStory] = useState<[]>([]);
   const [topStory, setTopStory] = useState<[]>([]);
   const [viewedStory, setViewedStory] = useState<[]>([]);
+  const [guardianStory, setGuardianStory] = useState<[]>([]);
 
   useEffect(() => {
     const getArticles = () => {
@@ -27,6 +28,13 @@ const App = () => {
       )
         .then((res) => res.json())
         .then((res) => setViewedStory(res.results))
+        .catch((err) => console.log(err));
+
+      fetch(
+        `https://content.guardianapis.com/world?api-key=${process.env.REACT_APP_GUARDIAN_KEY}`
+      )
+        .then((res) => res.json())
+        .then((res) => setGuardianStory(res.response.results))
         .catch((err) => console.log(err));
     };
     getArticles();
@@ -60,7 +68,7 @@ const App = () => {
           <SearchedArticle searchedstories={searchedStory} />
         </Modal>
         {/* <TopStory topstories={topStory} /> */}
-        <ViewedArticle viewedstories={viewedStory} />
+        <ViewedArticle viewedstories={viewedStory} guardian={guardianStory} />
       </div>
     </div>
   );
