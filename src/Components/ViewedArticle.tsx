@@ -45,10 +45,9 @@ const ViewedArticle = ({ viewedstories }: any) => {
                   className="info-container"
                 >
                   <h3 aria-label="title">{article.title}</h3>
-                  {/* <h2 aria-label="byline">{article.byline}</h2> */}
-                  <p aria-label="abstract">{article.abstract}</p>
-                  {/* <p aria-label="date">{article.published_date}</p> */}
                 </a>
+
+                <p aria-label="abstract">{article.abstract}</p>
               </div>
             );
           return null;
