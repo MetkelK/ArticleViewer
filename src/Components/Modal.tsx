@@ -3,9 +3,15 @@ import React, { useState, useEffect } from "react";
 const Modal = ({ children, setSearch, search }: any) => {
   const [open, setOpen] = useState<boolean | false>(false);
 
-  const handleClose = () => {
-    setOpen(false);
-    setSearch(false);
+  const handleClose = (e: any) => {
+    if (
+      e.target.classList.contains("modal") ||
+      e.target.classList.contains("close")
+    ) {
+      setOpen(false);
+      setSearch(false);
+      console.log(e);
+    }
   };
 
   useEffect(() => {
@@ -20,10 +26,10 @@ const Modal = ({ children, setSearch, search }: any) => {
 
   if (open) {
     return (
-      <div className="modal">
+      <div className="modal" onClick={handleClose}>
         <div className="modal-content">
           <button className="close" onClick={handleClose}>
-            &times;
+            <span aria-hidden="true">&times;</span>
           </button>
           {children}
         </div>
