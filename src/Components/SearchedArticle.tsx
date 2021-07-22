@@ -36,7 +36,7 @@ const SearchedArticle = ({ searchedstories }: any) => {
           // </div>
           <div key={article._id} className="article">
             {article.multimedia.length > 0 && (
-              <a href={article.web_url}>
+              <a href={article.web_url} target="_blank" rel="noreferrer">
                 <figure>
                   <img
                     src={`https://www.nytimes.com/${article.multimedia[0].url}`}
@@ -45,7 +45,12 @@ const SearchedArticle = ({ searchedstories }: any) => {
                 </figure>
               </a>
             )}
-            <a href={article.web_url} className="info-container">
+            <a
+              href={article.web_url}
+              className="info-container"
+              target="_blank"
+              rel="noreferrer"
+            >
               <h3>{article.headline.main}</h3>
             </a>
             <p>{article.abstract}</p>

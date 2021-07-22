@@ -39,7 +39,12 @@ const ViewedArticle = ({ viewedstories, guardian }: any) => {
             if (article.media.length > 0) {
               return (
                 <div key={article.id} className="article">
-                  <a href={article.url} aria-label="url">
+                  <a
+                    href={article.url}
+                    aria-label="url"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <figure>
                       <img
                         src={article.media[0]["media-metadata"][2].url}
@@ -54,6 +59,8 @@ const ViewedArticle = ({ viewedstories, guardian }: any) => {
                     href={article.url}
                     aria-label="url"
                     className="info-container"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <h3 aria-label="title">{article.title}</h3>
                   </a>
@@ -65,7 +72,7 @@ const ViewedArticle = ({ viewedstories, guardian }: any) => {
           } else if (typeof article.id === "string") {
             return (
               <div key={article.id} className="article">
-                <a href={article.webUrl}>
+                <a href={article.webUrl} target="_blank" rel="noreferrer">
                   <h1>{article.webTitle}</h1>
                 </a>
               </div>
