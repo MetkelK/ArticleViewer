@@ -41,6 +41,7 @@ const SearchedArticle = ({ searchedstories }: any) => {
                   <img
                     src={`https://www.nytimes.com/${article.multimedia[0].url}`}
                     alt={article.multimedia[0].crop_name}
+                    className="searched-article"
                   />
                 </figure>
               </a>
