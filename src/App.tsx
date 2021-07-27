@@ -5,6 +5,7 @@ import SearchedArticle from "./Components/SearchedArticle";
 import TopStory from "./Components/TopStory";
 import ViewedArticle from "./Components/ViewedArticle";
 import Modal from "./Components/Modal";
+import Slider from "./Components/Slider";
 
 const App = () => {
   const [query, setQuery] = useState<string | "">("");
@@ -64,6 +65,7 @@ const App = () => {
         />
       </form>
       <div>
+        <Slider />
         <Modal search={search} setSearch={setSearch}>
           <SearchedArticle searchedstories={searchedStory} />
         </Modal>
