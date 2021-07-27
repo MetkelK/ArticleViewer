@@ -7,7 +7,7 @@ import { constants } from "./store";
 export default class Scroll {
   constructor() {
     this.vs = new VirtualScroll();
-    this.vs.options.mouseMultiplier = 0.45;
+    this.vs.mouseMultiplier = 0.45;
 
     this.dom = {
       container: document.querySelector("[data-scroll]"),
