@@ -11,9 +11,9 @@ interface Articles {
 const TopStory = ({ topstories }: any) => {
   if (topstories) {
     return (
-      <div>
+      <div className="scroller">
         {topstories.map((article: Articles, i: number) => (
-          <div key={i}>
+          <div key={i} className="toparticle">
             <h1 aria-label="title">{article.title}</h1>
             <h2 aria-label="byline">{article.byline}</h2>
             <p aria-label="abstract">{article.abstract}</p>
