@@ -213,3 +213,15 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+.scroller {
+  display: flex;
+  overflow-x: scroll;
+  height: auto;
+}
+
+.toparticle {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
