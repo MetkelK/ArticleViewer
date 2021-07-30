@@ -31,7 +31,7 @@ const TopStory = ({ topstories }: any) => {
           //     New York Times
           //   </a>
           // </div>
-          <div key={i} className="">
+          <div key={i} className="toparticle">
             <a
               href={article.url}
               aria-label="url"
