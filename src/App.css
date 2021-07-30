@@ -216,12 +216,45 @@
 
 .scroller {
   display: flex;
+  flex-direction: row;
   overflow-x: scroll;
   height: auto;
+  width: 100%;
 }
 
 .toparticle {
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  min-width: calc(100vw - 3rem);
+  position: relative;
+  padding: 0.5rem 0;
+  margin-right: 1rem;
+}
+
+.toparticle:first-child {
+  margin-left: 1rem;
+}
+
+.toparticle figure {
+  margin: 0;
+  padding: 0;
+}
+
+.toparticle a {
+  text-decoration: none;
+  color: #000;
+}
+
+.toparticle img {
+  width: 100%;
+  display: block;
+}
+
+.toparticle h1 {
+  margin: 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.toparticle figcaption {
+  margin-bottom: 1rem;
 }
