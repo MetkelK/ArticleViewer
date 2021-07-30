@@ -22,15 +22,6 @@ const TopStory = ({ topstories }: any) => {
     return (
       <div className="scroller">
         {topstories.map((article: Articles, i: number) => (
-          // <div key={i} className="toparticle">
-          //   <h1 aria-label="title">{article.title}</h1>
-          //   <h2 aria-label="byline">{article.byline}</h2>
-          //   <p aria-label="abstract">{article.abstract}</p>
-          //   <p aria-label="date">{article.date}</p>
-          //   <a href={article.url} aria-label="url">
-          //     New York Times
-          //   </a>
-          // </div>
           <div key={i} className="toparticle">
             <a
               href={article.url}
