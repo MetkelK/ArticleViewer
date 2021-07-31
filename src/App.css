@@ -250,10 +250,10 @@
   display: block;
 }
 
-.toparticle h1 {
+/* .toparticle h3 {
   margin: 1rem 0;
   transition: color 0.3s ease;
-}
+} */
 
 .toparticle figcaption {
   margin-bottom: 1rem;
