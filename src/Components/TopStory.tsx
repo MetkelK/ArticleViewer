@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface Articles {
   title: string;
@@ -18,6 +18,25 @@ interface Articles {
 }
 
 const TopStory = ({ topstories }: any) => {
+  const [progress, setProgress] = useState<number | 0>(0);
+
+  useEffect(() => {
+    const scroller = document.querySelector<HTMLElement>(".scroller");
+
+    const onScroll = () => {
+      if (scroller !== null) {
+        let scrollState = scroller.scrollLeft;
+        let maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+        setProgress(scrollState / maxScroll);
+        console.log(progress);
+      }
+    };
+
+    scroller?.addEventListener("scroll", onScroll);
+    return () => scroller?.removeEventListener("scroll", onScroll);
+  }, [progress]);
+
   if (topstories) {
     return (
       <div className="scroller">
