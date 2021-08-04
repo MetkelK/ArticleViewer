@@ -301,3 +301,20 @@
     min-height: 40vmax;
   }
 }
+
+.progress {
+  position: relative;
+  height: 5px;
+
+  border-radius: 3px;
+  border: 1px solid #333;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.filler {
+  background: #000;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-out;
+}
