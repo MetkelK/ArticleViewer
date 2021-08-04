@@ -63,7 +63,6 @@ const TopStory = ({ topstories }: any) => {
               aria-label="url"
               target="_blank"
               rel="noreferrer"
-              className="info-container"
             >
               <h3 aria-label="title">{article.title}</h3>
             </a>
