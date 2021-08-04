@@ -218,7 +218,7 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  min-height: 10vmax;
+  min-height: 60vmax;
   max-height: 80vmin;
 }
 
@@ -235,10 +235,14 @@
   margin-left: calc((80vw - 3rem) / 4);
 }
 
+.toparticle:last-child {
+  margin-right: calc((80vw - 3rem) / 4);
+}
+
 .toparticle figure {
   margin: 0;
   padding: 0;
-  height: calc(80vmin / 2);
+  height: calc(50vmax / 2);
 }
 
 .toparticle a {
@@ -253,11 +257,47 @@
   height: 100%;
 }
 
-/* .toparticle h3 {
-  margin: 1rem 0;
-  transition: color 0.3s ease;
-} */
-
 .toparticle figcaption {
   margin-bottom: 1rem;
+}
+
+.toparticle h3 {
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.toparticle p {
+  margin: 0;
+}
+
+@media (min-width: 576px) {
+  .scroller {
+    min-height: 60vmax;
+  }
+}
+
+@media (min-width: 768px) {
+  .scroller {
+    min-height: 50vmax;
+  }
+
+  .toparticle:first-child {
+    margin-left: calc((80vw - 3rem) / 6);
+  }
+
+  .toparticle:last-child {
+    margin-right: calc((80vw - 3rem) / 6);
+  }
+}
+
+@media (min-width: 992px) {
+  .scroller {
+    min-height: 40vmax;
+  }
+}
+
+@media (min-width: 1200px) {
+  .scroller {
+    min-height: 40vmax;
+  }
 }
