@@ -238,6 +238,7 @@
 .toparticle figure {
   margin: 0;
   padding: 0;
+  height: calc(80vmin / 2);
 }
 
 .toparticle a {
@@ -249,9 +250,7 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 100%;
 }
 
 /* .toparticle h3 {
