@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { MobileView } from "react-device-detect";
 
 interface Articles {
   title: string;
@@ -73,12 +74,14 @@ const TopStory = ({ topstories }: any) => {
             </div>
           ))}
         </div>
-        <div className="progress" style={{ width: width * 0.8 }}>
-          <div
-            className="filler"
-            style={{ width: progress * (width * 0.8) }}
-          ></div>
-        </div>
+        <MobileView>
+          <div className="progress" style={{ width: width * 0.8 }}>
+            <div
+              className="filler"
+              style={{ width: progress * (width * 0.8) }}
+            ></div>
+          </div>
+        </MobileView>
       </div>
     );
   } else {
