@@ -20,6 +20,8 @@ interface Articles {
 const TopStory = ({ topstories }: any) => {
   const [progress, setProgress] = useState<number | 0>(0);
 
+  const { innerWidth: width } = window;
+
   useEffect(() => {
     const scroller = document.querySelector<HTMLElement>(".scroller");
 
@@ -39,36 +41,44 @@ const TopStory = ({ topstories }: any) => {
 
   if (topstories) {
     return (
-      <div className="scroller">
-        {topstories.map((article: Articles, i: number) => (
-          <div key={i} className="toparticle">
-            <a
-              href={article.url}
-              aria-label="url"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <figure>
-                <img
-                  src={article.multimedia[0].url}
-                  alt={article.multimedia[0].caption}
-                />
-                <figcaption className="copyright">
-                  {article.multimedia[0].copyright}
-                </figcaption>
-              </figure>
-            </a>
-            <a
-              href={article.url}
-              aria-label="url"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h3 aria-label="title">{article.title}</h3>
-            </a>
-            <p aria-label="abstract">{article.abstract}</p>
-          </div>
-        ))}
+      <div className="container">
+        <div className="scroller">
+          {topstories.map((article: Articles, i: number) => (
+            <div key={i} className="toparticle">
+              <a
+                href={article.url}
+                aria-label="url"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <figure>
+                  <img
+                    src={article.multimedia[0].url}
+                    alt={article.multimedia[0].caption}
+                  />
+                  <figcaption className="copyright">
+                    {article.multimedia[0].copyright}
+                  </figcaption>
+                </figure>
+              </a>
+              <a
+                href={article.url}
+                aria-label="url"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h3 aria-label="title">{article.title}</h3>
+              </a>
+              <p aria-label="abstract">{article.abstract}</p>
+            </div>
+          ))}
+        </div>
+        <div className="progress" style={{ width: width * 0.8 }}>
+          <div
+            className="filler"
+            style={{ width: progress * (width * 0.8) }}
+          ></div>
+        </div>
       </div>
     );
   } else {
