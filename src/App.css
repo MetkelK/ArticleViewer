@@ -232,7 +232,7 @@
 }
 
 .toparticle:first-child {
-  margin-left: calc((80vw - 3rem) / 6);
+  margin-left: calc((80vw - 3rem) / 4);
 }
 
 .toparticle figure {
