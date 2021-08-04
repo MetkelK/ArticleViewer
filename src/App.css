@@ -228,11 +228,11 @@
   min-width: calc(80vw - 3rem);
   position: relative;
   padding: 0.5rem 0;
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .toparticle:first-child {
-  margin-right: 1rem;
+  margin-left: calc((80vw - 3rem) / 6);
 }
 
 .toparticle figure {
