@@ -245,28 +245,33 @@
   height: calc(50vmax / 2);
 }
 
-.toparticle a {
+.toparticle a,
+.headline a {
   text-decoration: none;
   color: #000;
 }
 
-.toparticle img {
+.toparticle img,
+.headline img {
   width: 100%;
   display: block;
   object-fit: cover;
   height: 100%;
 }
 
-.toparticle figcaption {
+.toparticle figcaption,
+.headline figcaption {
   margin-bottom: 1rem;
 }
 
-.toparticle h3 {
+.toparticle h3,
+.headline h3 {
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
 
-.toparticle p {
+.toparticle p,
+.headline p {
   margin: 0;
 }
 
@@ -317,4 +322,13 @@
   height: 100%;
   border-radius: inherit;
   transition: width 0.2s ease-out;
+}
+
+.headline {
+  width: 90vw;
+  margin: 0 auto 1rem;
+}
+
+.headline figure {
+  margin: 0;
 }
