@@ -10,6 +10,7 @@ const App = () => {
   const [query, setQuery] = useState<string | "">("");
   const [search, setSearch] = useState<boolean | false>(false);
   const [searchedStory, setSearchedStory] = useState<[]>([]);
+  const [headline, setHeadline] = useState<[]>([]);
   const [topStory, setTopStory] = useState<[]>([]);
   const [viewedStory, setViewedStory] = useState<[]>([]);
   const [guardianStory, setGuardianStory] = useState<[]>([]);
@@ -20,7 +21,11 @@ const App = () => {
         `https://api.nytimes.com/svc/topstories/v2/home.json?&api-key=${process.env.REACT_APP_API_KEY}`
       )
         .then((res) => res.json())
-        .then((res) => setTopStory(res.results))
+        .then((res) => {
+          setHeadline(res.results.shift());
+          setTopStory(res.results);
+        })
+
         .catch((err) => console.log(err));
 
       fetch(
@@ -67,7 +72,7 @@ const App = () => {
         <Modal search={search} setSearch={setSearch}>
           <SearchedArticle searchedstories={searchedStory} />
         </Modal>
-        <TopStory topstories={topStory} />
+        <TopStory topstories={topStory} headline={headline} />
         <ViewedArticle viewedstories={viewedStory} guardian={guardianStory} />
       </div>
     </div>
