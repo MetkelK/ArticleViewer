@@ -32,7 +32,6 @@ const TopStory = ({ topstories }: any) => {
         let maxScroll = scroller.scrollWidth - scroller.clientWidth;
 
         setProgress(scrollState / maxScroll);
-        console.log(progress);
       }
     };
 
