@@ -18,7 +18,7 @@ interface Articles {
   };
 }
 
-const TopStory = ({ topstories }: any) => {
+const TopStory = ({ topstories, headline }: any) => {
   const [progress, setProgress] = useState<number | 0>(0);
 
   const { innerWidth: width } = window;
@@ -39,9 +39,36 @@ const TopStory = ({ topstories }: any) => {
     return () => scroller?.removeEventListener("scroll", onScroll);
   }, [progress]);
 
-  if (topstories) {
+  if (topstories && headline) {
     return (
       <div className="container">
+        <div className="headline">
+          <a
+            href={headline.url}
+            aria-label="url"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <figure>
+              <img
+                src={headline.multimedia[0].url}
+                alt={headline.multimedia[0].caption}
+              />
+              <figcaption className="copyright">
+                {headline.multimedia[0].copyright}
+              </figcaption>
+            </figure>
+          </a>
+          <a
+            href={headline.url}
+            aria-label="url"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <h3 aria-label="title">{headline.title}</h3>
+          </a>
+          <p aria-label="abstract">{headline.abstract}</p>
+        </div>
         <div className="scroller">
           {topstories.map((article: Articles, i: number) => (
             <div key={i} className="toparticle">
