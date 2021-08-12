@@ -49,15 +49,17 @@ const TopStory = ({ topstories, headline }: any) => {
             target="_blank"
             rel="noreferrer"
           >
-            <figure>
-              <img
-                src={headline.multimedia[0].url}
-                alt={headline.multimedia[0].caption}
-              />
-              <figcaption className="copyright">
-                {headline.multimedia[0].copyright}
-              </figcaption>
-            </figure>
+            {headline.multimedia && (
+              <figure>
+                <img
+                  src={headline.multimedia[0].url}
+                  alt={headline.multimedia[0].caption}
+                />
+                <figcaption className="copyright">
+                  {headline.multimedia[0].copyright}
+                </figcaption>
+              </figure>
+            )}
           </a>
           <a
             href={headline.url}
@@ -69,6 +71,7 @@ const TopStory = ({ topstories, headline }: any) => {
           </a>
           <p aria-label="abstract">{headline.abstract}</p>
         </div>
+
         <div className="scroller">
           {topstories.map((article: Articles, i: number) => (
             <div key={i} className="toparticle">
