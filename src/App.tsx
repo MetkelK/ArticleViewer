@@ -60,7 +60,7 @@ const App = () => {
   // const formSubmit = (e:React.FormEvent<HTMLFormElement>) => {}
   return (
     <div>
-      <form onSubmit={searchArticles}>
+      <form onSubmit={searchArticles} className="search">
         <input
           type="text"
           placeholder="Search"
