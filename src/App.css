@@ -201,6 +201,10 @@
   margin-left: 1rem;
 }
 
+.toparticle:last-child {
+  margin-left: 1rem;
+}
+
 .toparticle figure {
   margin: 0 0 1rem;
   padding: 0;
