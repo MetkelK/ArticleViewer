@@ -186,6 +186,7 @@
   overflow-x: scroll;
   min-height: 60vmax;
   max-height: 80vmin;
+  padding: 0 1rem;
 }
 
 .toparticle {
