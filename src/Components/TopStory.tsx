@@ -41,7 +41,7 @@ const TopStory = ({ topstories, headline }: any) => {
 
   if (topstories && headline) {
     return (
-      <div className="container">
+      <div>
         <div className="headline">
           <a
             href={headline.url}
