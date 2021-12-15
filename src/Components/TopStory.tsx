@@ -41,8 +41,8 @@ const TopStory = ({ topstories, headline }: any) => {
 
   if (topstories && headline) {
     return (
-      <div>
-        <div className="headline">
+      <div className="container mx-auto">
+        <div className="w-full">
           <a
             href={headline.url}
             aria-label="url"
@@ -55,7 +55,7 @@ const TopStory = ({ topstories, headline }: any) => {
                   src={headline.multimedia[0].url}
                   alt={headline.multimedia[0].caption}
                 />
-                <figcaption className="copyright">
+                <figcaption className=" text-gray-400 text-xs leading-3 tracking-wide mt-2 text-right">
                   {headline.multimedia[0].copyright}
                 </figcaption>
               </figure>
@@ -67,7 +67,12 @@ const TopStory = ({ topstories, headline }: any) => {
             target="_blank"
             rel="noreferrer"
           >
-            <h3 aria-label="title">{headline.title}</h3>
+            <h3
+              aria-label="title"
+              className=" text-3xl font-bold font-sans mb-2"
+            >
+              {headline.title}
+            </h3>
           </a>
           <p aria-label="abstract">{headline.abstract}</p>
         </div>
