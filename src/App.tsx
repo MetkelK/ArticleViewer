@@ -66,6 +66,7 @@ const App = () => {
           placeholder="Search"
           onChange={(e) => setQuery(e.target.value)}
           value={query}
+          className="rounded-sm border-solid border-2 "
         />
       </form>
       <div>
