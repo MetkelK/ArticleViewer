@@ -42,7 +42,7 @@ const TopStory = ({ topstories, headline }: any) => {
   if (topstories && headline) {
     return (
       <div className="">
-        <div className="mx-8 mb-12 bg-white shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700">
+        <div className="mx-8 mb-12 pb-4 bg-white shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700">
           <a
             href={headline.url}
             aria-label="url"
@@ -56,7 +56,7 @@ const TopStory = ({ topstories, headline }: any) => {
                   alt={headline.multimedia[0].caption}
                   className="rounded-t-lg"
                 />
-                <figcaption className=" text-gray-400 text-xs leading-3 tracking-wide mt-2 mr-4 text-right">
+                <figcaption className="text-gray-400 text-xs leading-3 tracking-wide my-2 mr-4 text-right">
                   {headline.multimedia[0].copyright}
                 </figcaption>
               </figure>
@@ -71,7 +71,7 @@ const TopStory = ({ topstories, headline }: any) => {
           </h3>
           <p
             aria-label="abstract"
-            className=" text-gray-700 font-normal mb-3 dark:text-gray-400 px-4"
+            className=" text-gray-700 font-normal mb-2 dark:text-gray-400 px-4"
           >
             {headline.abstract}
           </p>
@@ -80,41 +80,51 @@ const TopStory = ({ topstories, headline }: any) => {
             aria-label="url"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-900 font-bold mb-3 dark:text-white px-4"
+            className="text-gray-900 font-bold dark:text-white px-4"
           >
             Read More
           </a>
         </div>
 
-        <div className="snap-x flex flex-row overflow-x-scroll">
+        <div className="flex overflow-x-scroll mx-8">
           {topstories.map((article: Articles, i: number) => (
-            <div key={i} className="snap-center mr-4 [width:90vw]">
+            <div
+              key={i}
+              className="min-w-[80vw] mr-8 mb-12 pb-4 bg-white overflow-hidden shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            >
+              <figure className="min-w-full max-h-96 lg:max-h-[48rem] overflow-hidden mb-4 ">
+                <img
+                  src={article.multimedia[0].url}
+                  alt={article.multimedia[0].caption}
+                  className="w-full object-cover rounded-t-lg"
+                />
+                <figcaption className="text-gray-400 text-xs leading-3 tracking-wide mt-2 mr-4 text-right">
+                  {article.multimedia[0].copyright}
+                </figcaption>
+              </figure>
+
+              <h3
+                aria-label="title"
+                className="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white px-4"
+              >
+                {article.title}
+              </h3>
+
+              <p
+                aria-label="abstract"
+                className="text-gray-700 font-normal mb-2 dark:text-gray-400 px-4"
+              >
+                {article.abstract}
+              </p>
               <a
                 href={article.url}
                 aria-label="url"
                 target="_blank"
                 rel="noreferrer"
+                className="text-gray-900 font-bold dark:text-white px-4"
               >
-                <figure>
-                  <img
-                    src={article.multimedia[0].url}
-                    alt={article.multimedia[0].caption}
-                    className="w-full block object-cover h-full"
-                  />
-                  <figcaption className="copyright">
-                    {article.multimedia[0].copyright}
-                  </figcaption>
-                </figure>
+                Read More{" "}
               </a>
-              <a
-                href={article.url}
-                aria-label="url"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <h3 aria-label="title">{article.title}</h3>
-              </a>
-              <p aria-label="abstract">{article.abstract}</p>
             </div>
           ))}
         </div>
