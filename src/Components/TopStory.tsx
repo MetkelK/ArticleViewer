@@ -30,6 +30,7 @@ const TopStory = ({ topstories, headline }: any) => {
       if (scroller !== null) {
         let scrollState = scroller.scrollLeft;
         let maxScroll = scroller.scrollWidth - scroller.clientWidth;
+        console.log(scrollState / maxScroll);
 
         setProgress(scrollState / maxScroll);
       }
@@ -86,11 +87,11 @@ const TopStory = ({ topstories, headline }: any) => {
           </a>
         </div>
 
-        <div className="flex overflow-x-scroll mx-4">
+        <div className="scroller flex overflow-x-scroll mx-4">
           {topstories.map((article: Articles, i: number) => (
             <div
               key={i}
-              className="min-w-[80vw] mr-4 mb-12 pb-4 bg-white overflow-hidden shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              className=" min-w-[80vw] mr-4 mb-12 pb-4 bg-white overflow-hidden shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 ease-in-out"
             >
               <figure className="min-w-full max-h-96 lg:max-h-[48rem] xl:max-h-[64rem] overflow-hidden mb-4 ">
                 <img
@@ -130,11 +131,11 @@ const TopStory = ({ topstories, headline }: any) => {
         </div>
         <MobileView>
           <div
-            className=" h-px border-2 border-solid border-black overflow-hidden rounded-md my-4 "
+            className="mx-auto relative h-2 bg-inherit border-solid border border-light-blue-500 overflow-hidden rounded-md my-4 "
             style={{ width: width * 0.8 }}
           >
             <div
-              className="bg-black h-full border-2 transition duration-150 ease-in-out"
+              className="bg-black h-2 transition duration-150 ease-in-out"
               style={{ width: progress * (width * 0.8) }}
             ></div>
           </div>
