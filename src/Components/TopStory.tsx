@@ -129,9 +129,12 @@ const TopStory = ({ topstories, headline }: any) => {
           ))}
         </div>
         <MobileView>
-          <div className="progress" style={{ width: width * 0.8 }}>
+          <div
+            className="relative h-px border-2 border-solid border-black overflow-hidden rounded-md my-4 "
+            style={{ width: width * 0.8 }}
+          >
             <div
-              className="filler"
+              className="bg-black h-full transition duration-150 ease-in-out"
               style={{ width: progress * (width * 0.8) }}
             ></div>
           </div>
