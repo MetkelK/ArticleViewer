@@ -41,8 +41,8 @@ const TopStory = ({ topstories, headline }: any) => {
 
   if (topstories && headline) {
     return (
-      <div className="">
-        <div className="mx-8 mb-12 pb-4 bg-white shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700">
+      <div className="container mx-auto">
+        <div className="mx-4 mb-12 pb-4 bg-white shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700">
           <a
             href={headline.url}
             aria-label="url"
@@ -86,11 +86,11 @@ const TopStory = ({ topstories, headline }: any) => {
           </a>
         </div>
 
-        <div className="flex overflow-x-scroll mx-8">
+        <div className="flex overflow-x-scroll mx-4">
           {topstories.map((article: Articles, i: number) => (
             <div
               key={i}
-              className="min-w-[80vw] mr-8 mb-12 pb-4 bg-white overflow-hidden shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              className="min-w-[80vw] mr-4 mb-12 pb-4 bg-white overflow-hidden shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 ease-in-out"
             >
               <figure className="min-w-full max-h-96 lg:max-h-[48rem] xl:max-h-[64rem] overflow-hidden mb-4 ">
                 <img
