@@ -92,7 +92,7 @@ const TopStory = ({ topstories, headline }: any) => {
               key={i}
               className="min-w-[80vw] mr-8 mb-12 pb-4 bg-white overflow-hidden shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 ease-in-out"
             >
-              <figure className="min-w-full max-h-96 lg:max-h-[48rem] overflow-hidden mb-4 ">
+              <figure className="min-w-full max-h-96 lg:max-h-[48rem] xl:max-h-[64rem] overflow-hidden mb-4 ">
                 <img
                   src={article.multimedia[0].url}
                   alt={article.multimedia[0].caption}
