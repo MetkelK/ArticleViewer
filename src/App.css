@@ -180,7 +180,7 @@
   }
 }
 
-.scroller {
+/* .scroller {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -188,7 +188,7 @@
   max-height: 80vmin;
   width: 90vw;
   margin: 0 auto 1rem;
-}
+} */
 
 .toparticle {
   display: flex;
@@ -244,9 +244,9 @@
 }
 
 @media (min-width: 576px) {
-  .scroller {
+  /* .scroller {
     min-height: 60vmax;
-  }
+  } */
 
   .toparticle {
     min-width: calc(60vw - 3rem);
@@ -254,9 +254,9 @@
 }
 
 @media (min-width: 768px) {
-  .scroller {
+  /* .scroller {
     min-height: 50vmax;
-  }
+  } */
 
   .toparticle {
     min-width: calc(40vw - 3rem);
@@ -272,9 +272,9 @@
 }
 
 @media (min-width: 992px) {
-  .scroller {
+  /* .scroller {
     min-height: 40vmax;
-  }
+  } */
 
   .toparticle {
     min-width: calc(35vw - 3rem);
@@ -290,9 +290,9 @@
 }
 
 @media (min-width: 1200px) {
-  .scroller {
+  /* .scroller {
     min-height: 40vmax;
-  }
+  } */
 
   .toparticle {
     min-width: calc(30vw - 3rem);
@@ -302,7 +302,6 @@
 .progress {
   position: relative;
   height: 5px;
-
   border-radius: 3px;
   border: 1px solid #333;
   margin: 1rem auto;
