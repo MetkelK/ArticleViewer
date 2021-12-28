@@ -5,12 +5,15 @@ import SearchedArticle from "./Components/SearchedArticle";
 import TopStory from "./Components/TopStory";
 import ViewedArticle from "./Components/ViewedArticle";
 import Modal from "./Components/Modal";
+import Headline from "./Components/Headline";
+
+import { Article } from "./Components/Interfaces";
 
 const App = () => {
   const [query, setQuery] = useState<string | "">("");
   const [search, setSearch] = useState<boolean | false>(false);
   const [searchedStory, setSearchedStory] = useState<[]>([]);
-  const [headline, setHeadline] = useState<[]>([]);
+  const [headline, setHeadline] = useState<Article>(Object);
   const [topStory, setTopStory] = useState<[]>([]);
   const [viewedStory, setViewedStory] = useState<[]>([]);
   const [guardianStory, setGuardianStory] = useState<[]>([]);
@@ -73,7 +76,8 @@ const App = () => {
         <Modal search={search} setSearch={setSearch}>
           <SearchedArticle searchedstories={searchedStory} />
         </Modal>
-        <TopStory topstories={topStory} headline={headline} />
+        <Headline story={headline} />
+        <TopStory topstories={topStory} />
         <ViewedArticle viewedstories={viewedStory} guardian={guardianStory} />
       </div>
     </div>
