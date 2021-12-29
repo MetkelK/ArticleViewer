@@ -1,4 +1,4 @@
-export interface Article {
+export interface Story {
   title: string;
   byline: string;
   abstract: string;
@@ -16,7 +16,7 @@ export interface Article {
 }
 
 export interface ArticleProps {
-    story: Article
+    story: Story
 }
 
 export interface testProps {
