@@ -1,7 +1,7 @@
-import { Article } from "./Interfaces";
+import { Story } from "./Interfaces";
 
 interface ArticleProps {
-  story: Article;
+  story: Story;
 }
 
 const Headline = ({ story }: ArticleProps) => {
