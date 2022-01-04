@@ -76,7 +76,7 @@ const App = () => {
         <Modal search={search} setSearch={setSearch}>
           <SearchedArticle searchedstories={searchedStory} />
         </Modal>
-        <Headline headline={headline} />
+        <Headline story={headline} />
         <TopStory topstories={topStory} />
         <ViewedArticle viewedstories={viewedStory} guardian={guardianStory} />
       </div>
