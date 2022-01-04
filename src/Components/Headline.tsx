@@ -1,14 +1,11 @@
-import { Story } from "./Interfaces";
+import { ArticleProps } from "./Interfaces";
+import Article from "./Article";
 
-interface ArticleProps {
-  headline: Story;
-}
-
-const Headline = ({ headline }: ArticleProps) => {
-  if (headline) {
+const Headline = ({ story }: ArticleProps) => {
+  if (story) {
     return (
       <div className="container mx-auto">
-        <div className="mx-4 mb-12 pb-4 bg-white shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700">
+        {/* <div className="mx-4 mb-12 pb-4 bg-white shadow-md border border-gray-200 rounded-lg max-w-fit dark:bg-gray-800 dark:border-gray-700">
           <a
             href={headline.url}
             aria-label="url"
@@ -50,7 +47,8 @@ const Headline = ({ headline }: ArticleProps) => {
           >
             Read More
           </a>
-        </div>
+        </div> */}
+        <Article story={story} />
       </div>
     );
   } else {
